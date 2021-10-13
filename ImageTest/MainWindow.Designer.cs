@@ -61,7 +61,7 @@
 			this.pictureBox1.Location = new System.Drawing.Point(11, 50);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(343, 288);
+			this.pictureBox1.Size = new System.Drawing.Size(350, 307);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
@@ -70,10 +70,10 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox2.Location = new System.Drawing.Point(369, 50);
+			this.pictureBox2.Location = new System.Drawing.Point(380, 50);
 			this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(332, 288);
+			this.pictureBox2.Size = new System.Drawing.Size(350, 307);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
@@ -82,17 +82,18 @@
 			// 
 			this.CloseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.CloseBtn.ForeColor = System.Drawing.Color.White;
-			this.CloseBtn.Location = new System.Drawing.Point(535, 7);
+			this.CloseBtn.Location = new System.Drawing.Point(626, 7);
 			this.CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.CloseBtn.Name = "CloseBtn";
-			this.CloseBtn.Size = new System.Drawing.Size(165, 36);
+			this.CloseBtn.Size = new System.Drawing.Size(104, 36);
 			this.CloseBtn.TabIndex = 3;
-			this.CloseBtn.Text = "Close Application";
+			this.CloseBtn.Text = "Close";
 			this.CloseBtn.UseVisualStyleBackColor = false;
 			this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
 			// 
 			// comboBox1
 			// 
+			this.comboBox1.AllowDrop = true;
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox1.ItemHeight = 16;
 			this.comboBox1.Items.AddRange(new object[] {
@@ -100,17 +101,19 @@
             "Зміна на постійне значення",
             "Розбивка: Red",
             "Розбивка: Green",
-            "Розбивка: Blue"});
-			this.comboBox1.Location = new System.Drawing.Point(345, 12);
+            "Розбивка: Blue",
+            "new filter"});
+			this.comboBox1.Location = new System.Drawing.Point(182, 14);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(184, 24);
+			this.comboBox1.Size = new System.Drawing.Size(179, 24);
 			this.comboBox1.TabIndex = 4;
 			// 
 			// MainWindow
 			// 
+			this.AccessibleName = "";
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(711, 347);
+			this.ClientSize = new System.Drawing.Size(740, 360);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.CloseBtn);
 			this.Controls.Add(this.pictureBox2);
@@ -118,9 +121,13 @@
 			this.Controls.Add(this.OpenFille);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(1110, 360);
+			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(740, 360);
 			this.Name = "MainWindow";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form1";
+			this.Text = "Image Editor";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);

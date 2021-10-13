@@ -40,21 +40,28 @@ namespace ImageTest
             switch (comboBox1.SelectedIndex)
 			{
                 case 0: // invertion
+                    this.Size = new Size(500, 250);
                     CreateNewImageInvertion(InputImage);
                     break;
                 case 1: // change on const value
+                    this.Size = new Size(500, 250);
                     CreateNewImageChangeOnConstValue(InputImage, 100, 0, 0);
                     break;
                 case 2: // red
+                    this.Size = new Size(500, 250);
                     CreateNewImageRed(InputImage);
                     break;
                 case 3: // green
+                    this.Size = new Size(500, 250);
                     CreateNewImageGreen(InputImage);
                     break;
                 case 4: // blue
+                    this.Size = new Size(500, 250);
                     CreateNewImageBlue(InputImage);
                     break;
-
+                case 5: // new filter
+                    this.Size = new Size(750, 250);
+                    break;
             }
             
         }
@@ -143,5 +150,5 @@ namespace ImageTest
                 }
             pictureBox2.Image = OutputImage;
         }
-    }
+	}
 }
