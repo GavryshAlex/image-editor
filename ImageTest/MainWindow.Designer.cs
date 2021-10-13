@@ -100,8 +100,7 @@
             "Зміна на постійне значення",
             "Розбивка: Red",
             "Розбивка: Green",
-            "Розбивка: Blue",
-            "Розмиття x2"});
+            "Розбивка: Blue"});
 			this.comboBox1.Location = new System.Drawing.Point(345, 12);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(184, 24);
