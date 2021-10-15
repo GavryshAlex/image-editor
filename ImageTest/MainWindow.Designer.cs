@@ -73,7 +73,7 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox2.Location = new System.Drawing.Point(367, 50);
+			this.pictureBox2.Location = new System.Drawing.Point(380, 50);
 			this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(350, 274);
@@ -121,7 +121,7 @@
 			// 
 			this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox3.Location = new System.Drawing.Point(723, 50);
+			this.pictureBox3.Location = new System.Drawing.Point(760, 50);
 			this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(350, 274);
@@ -148,7 +148,7 @@
 			this.AccessibleName = "";
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(740, 350);
+			this.ClientSize = new System.Drawing.Size(1160, 350);
 			this.Controls.Add(this.OpenFile2);
 			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.comboBox1);

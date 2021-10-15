@@ -27,9 +27,10 @@ namespace ImageTest
                 {
                     string filePath = openFileDialog1.FileName;
 
-                    InputImage2 = new Bitmap(filePath);
-                    pictureBox1.Image = InputImage2;
-                    CreateNewImage();
+                    InputImage1 = new Bitmap(filePath);
+                    pictureBox1.Image = InputImage1;
+                    if (!(comboBox1.SelectedIndex == 11))
+                        CreateNewImage();
                 }
             }
             catch
@@ -101,9 +102,7 @@ namespace ImageTest
                     filterSobel(InputImage1);
                     break;
                 case 11:
-                    Size = new Size(Size.Width + 100, Size.Height);
-                    ImageZlyttya(InputImage1, InputImage2);
-                    MessageBox.Show("awefawef");
+                    ImageMerge(InputImage1, InputImage2);
                     break;
 
             }
@@ -124,11 +123,25 @@ namespace ImageTest
                 pictureBox3.Visible = false;
             }
         }
-        private void ImageZlyttya(Bitmap img1, Bitmap img2)
+
+
+
+        private Image cropImage(Bitmap img, Rectangle cropArea) // обрезка изображения
+        {
+            return img.Clone(cropArea, img.PixelFormat);
+        }
+        private void EqualResolution(ref Bitmap img1, ref Bitmap img2) // сведение к одинаковому разрешению
 		{
             int m = img1.Width, n = img1.Height;
-            img2.SetResolution(n, m);
-            pictureBox2.Image = img2;
+            img1 = new Bitmap(cropImage(img1, new Rectangle(0, 0, Min(m, img2.Width), Min(n, img2.Height))));
+            img2 = new Bitmap(cropImage(img2, new Rectangle(0, 0, Min(m, img2.Width), Min(n, img2.Height))));
+        }
+        private void ImageMerge(Bitmap img1, Bitmap img2)
+		{
+            EqualResolution(ref img1, ref img2);
+            int m = img1.Width, n = img1.Height;
+            pictureBox1.Image = cropImage(img1, new Rectangle(0, 0, m, n));
+            pictureBox2.Image = cropImage(img2, new Rectangle(0, 0, m, n));
             Bitmap OutputImage = new Bitmap(m, n);
             double a = 0.3;
             for(int i = 0; i < m; i ++)
@@ -138,9 +151,9 @@ namespace ImageTest
                     Color firstPixel = img1.GetPixel(i,j);
                     Color secondPixel = img2.GetPixel(i, j);
 
-                    Color currentPixel = FromArgb((byte)(a*firstPixel.R+(1-a)*secondPixel.R),
-                        (byte)(a * firstPixel.G + (1 - a) * secondPixel.G),
-                        (byte)(a * firstPixel.B + (1 - a) * secondPixel.B));
+                    Color currentPixel = FromArgb((byte)Round(a*firstPixel.R+(1-a)*secondPixel.R),
+                        (byte)Round(a * firstPixel.G + (1 - a) * secondPixel.G),
+                        (byte)Round(a * firstPixel.B + (1 - a) * secondPixel.B));
                     OutputImage.SetPixel(i, j, currentPixel);
 				}
 			}
@@ -418,7 +431,8 @@ namespace ImageTest
             }
             pictureBox2.Image = OutputImage;
         }
-        private void filterSobel(Bitmap InputImage)
+
+		private void filterSobel(Bitmap InputImage)
         {
             int m = InputImage.Width, n = InputImage.Height;
             int i, j;
