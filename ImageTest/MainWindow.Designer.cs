@@ -110,7 +110,8 @@
             "Фільтр ерозії",
             "Фільтр нарощування",
             "Фільтер Солбеля",
-            "Злиття зображень"});
+            "Злиття зображень",
+            "Додання водяного знаку"});
 			this.comboBox1.Location = new System.Drawing.Point(441, 14);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(179, 24);

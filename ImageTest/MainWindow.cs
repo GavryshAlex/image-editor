@@ -29,7 +29,7 @@ namespace ImageTest
 
                     InputImage1 = new Bitmap(filePath);
                     pictureBox1.Image = InputImage1;
-                    if (!(comboBox1.SelectedIndex == 11))
+                    if (!(comboBox1.SelectedIndex == 11 || comboBox1.SelectedIndex == 12))
                         CreateNewImage();
                 }
             }
@@ -104,13 +104,71 @@ namespace ImageTest
                 case 11:
                     ImageMerge(InputImage1, InputImage2);
                     break;
+                case 12:
+                    AddWatersign(InputImage1, InputImage2);
+                    /*pictureBox1.Image = pictureBox3.Image;
+                    InputImage1 = new Bitmap(pictureBox1.Image);
+                    AddWatersign(InputImage1, InputImage2);*/
+                    break;
+                case 13:
+                    AddWatersign(InputImage1, InputImage2); // removes watersign
+                    break;
 
             }
             
         }
+        private int[,] BitmapToBinary(Bitmap btm)
+		{
+            int m = btm.Width, n = btm.Height;
+            int i, j;
+            int[,] CGrey = new int[m, n];
+            int pixelGrey;
+            for (i = 0; i < m; i++)
+                for (j = 0; j < n; j++)
+                {
+                    pixelGrey = (int)Round(((int)btm.GetPixel(i, j).R + (int)btm.GetPixel(i, j).G + (int)btm.GetPixel(i, j).B) / 3.0);
+                    if (pixelGrey > 127)
+                        CGrey[i, j] = 1;
+                    else
+                        CGrey[i, j] = 0;
+                }
+            return CGrey;
+		}
+        private void AddWatersign(Bitmap image, Bitmap watersign)
+        {
+            EqualResolution(ref image, ref watersign);
+            int m = image.Width, n = image.Height;
+            pictureBox1.Image = cropImage(image, new Rectangle(0, 0, m, n));
+            pictureBox2.Image = cropImage(watersign, new Rectangle(0, 0, m, n));
+            Bitmap OutputImage = new Bitmap(m, n);
+            int[,] WGrey = BitmapToBinary(watersign);
+            //int[,] CGrey = new int[m, n];
+            for (int i = 0; i < m; i ++)
+			{
+                for (int j = 0; j < n; j ++)
+				{
+                    Color currentPixel = image.GetPixel(i, j);
+                    int r, g, b, temp;
+                    r = currentPixel.R;
+                    g = currentPixel.G;
+                    b = currentPixel.B;
+                    //int tempBin = Convert.ToInt32(Convert.ToString(temp, 2));
+                    if (WGrey[i,j] == 0)
+                        b = b ^ 128;
+                    Color newPixel = FromArgb((byte) r, (byte) g, (byte) b);
+                    OutputImage.SetPixel(i,j, newPixel);
+				}
+			}
+
+            pictureBox3.Image = OutputImage;
+
+        }
+
+
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 11)
+            if (comboBox1.SelectedIndex == 11 || comboBox1.SelectedIndex == 12)
 			{
                 OpenFile2.Visible = true;
                 pictureBox3.Visible = true;
