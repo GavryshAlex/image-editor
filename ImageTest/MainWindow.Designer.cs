@@ -104,17 +104,17 @@
             "Розбивка: Red",
             "Розбивка: Green",
             "Розбивка: Blue",
-            "Blur",
+            "Розмиття",
             "Покращення якості",
             "Медіанний фільтр",
             "Фільтр ерозії",
             "Фільтр нарощування",
             "Фільтер Солбеля",
             "Злиття зображень",
-            "Додання водяного знаку"});
-			this.comboBox1.Location = new System.Drawing.Point(441, 14);
+            "Додання/вилучення водяного знаку"});
+			this.comboBox1.Location = new System.Drawing.Point(380, 12);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(179, 24);
+			this.comboBox1.Size = new System.Drawing.Size(240, 24);
 			this.comboBox1.TabIndex = 4;
 			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 			// 

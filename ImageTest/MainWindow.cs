@@ -62,31 +62,24 @@ namespace ImageTest
             switch (comboBox1.SelectedIndex)
 			{
                 case 0: // invertion
-                    //this.Size = new Size(500, 250);
                     ImageInvertion(InputImage1);
                     break;
                 case 1: // change on const value
-                    //this.Size = new Size(500, 250);
                     ImageChangeOnConstValue(InputImage1, 100, 0, 0);
                     break;
                 case 2: // red
-                    //this.Size = new Size(500, 250);
                     ImageRed(InputImage1);
                     break;
                 case 3: // green
-                    //this.Size = new Size(500, 250);
                     ImageGreen(InputImage1);
                     break;
                 case 4: // blue
-                    //this.Size = new Size(500, 250);
                     ImageBlue(InputImage1);
                     break;
                 case 5: // filter blur
-                    //this.Size = new Size(500, 250);
                     ImageBlur(InputImage1);
                     break;
                 case 6: // filter enhance
-                    //this.Size = new Size(750, 250);
                     ImageEnhance(InputImage1);
                     break;
                 case 7:
@@ -109,9 +102,6 @@ namespace ImageTest
                     /*pictureBox1.Image = pictureBox3.Image;
                     InputImage1 = new Bitmap(pictureBox1.Image);
                     AddWatersign(InputImage1, InputImage2);*/
-                    break;
-                case 13:
-                    AddWatersign(InputImage1, InputImage2); // removes watersign
                     break;
 
             }
