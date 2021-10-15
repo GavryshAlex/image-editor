@@ -29,30 +29,33 @@
         private void InitializeComponent()
         {
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.OpenFille = new System.Windows.Forms.Button();
+			this.OpenFile1 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.CloseBtn = new System.Windows.Forms.Button();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.OpenFile2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
-			// OpenFille
+			// OpenFile1
 			// 
-			this.OpenFille.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.OpenFille.Location = new System.Drawing.Point(11, 7);
-			this.OpenFille.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.OpenFille.Name = "OpenFille";
-			this.OpenFille.Size = new System.Drawing.Size(165, 36);
-			this.OpenFille.TabIndex = 0;
-			this.OpenFille.Text = "Open File From PC";
-			this.OpenFille.UseVisualStyleBackColor = false;
-			this.OpenFille.Click += new System.EventHandler(this.OpenFille_Click);
+			this.OpenFile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.OpenFile1.Location = new System.Drawing.Point(11, 7);
+			this.OpenFile1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.OpenFile1.Name = "OpenFile1";
+			this.OpenFile1.Size = new System.Drawing.Size(165, 36);
+			this.OpenFile1.TabIndex = 0;
+			this.OpenFile1.Text = "Open File From PC";
+			this.OpenFile1.UseVisualStyleBackColor = false;
+			this.OpenFile1.Click += new System.EventHandler(this.OpenFile1_Click);
 			// 
 			// pictureBox1
 			// 
@@ -61,7 +64,7 @@
 			this.pictureBox1.Location = new System.Drawing.Point(11, 50);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(350, 307);
+			this.pictureBox1.Size = new System.Drawing.Size(350, 274);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
@@ -70,10 +73,10 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox2.Location = new System.Drawing.Point(380, 50);
+			this.pictureBox2.Location = new System.Drawing.Point(367, 50);
 			this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(350, 307);
+			this.pictureBox2.Size = new System.Drawing.Size(350, 274);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
@@ -93,7 +96,6 @@
 			// 
 			// comboBox1
 			// 
-			this.comboBox1.AllowDrop = true;
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox1.ItemHeight = 16;
 			this.comboBox1.Items.AddRange(new object[] {
@@ -102,34 +104,68 @@
             "Розбивка: Red",
             "Розбивка: Green",
             "Розбивка: Blue",
-            "new filter"});
-			this.comboBox1.Location = new System.Drawing.Point(182, 14);
+            "Blur",
+            "Покращення якості",
+            "Медіанний фільтр",
+            "Фільтр ерозії",
+            "Фільтр нарощування",
+            "Фільтер Солбеля",
+            "Злиття зображень"});
+			this.comboBox1.Location = new System.Drawing.Point(441, 14);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(179, 24);
 			this.comboBox1.TabIndex = 4;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox3.Location = new System.Drawing.Point(723, 50);
+			this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(350, 274);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox3.TabIndex = 6;
+			this.pictureBox3.TabStop = false;
+			this.pictureBox3.Visible = false;
+			// 
+			// OpenFile2
+			// 
+			this.OpenFile2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.OpenFile2.Location = new System.Drawing.Point(196, 7);
+			this.OpenFile2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.OpenFile2.Name = "OpenFile2";
+			this.OpenFile2.Size = new System.Drawing.Size(165, 36);
+			this.OpenFile2.TabIndex = 7;
+			this.OpenFile2.Text = "Open File2 From PC";
+			this.OpenFile2.UseVisualStyleBackColor = false;
+			this.OpenFile2.Visible = false;
+			this.OpenFile2.Click += new System.EventHandler(this.OpenFile2_Click);
 			// 
 			// MainWindow
 			// 
 			this.AccessibleName = "";
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(740, 360);
+			this.ClientSize = new System.Drawing.Size(740, 350);
+			this.Controls.Add(this.OpenFile2);
+			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.CloseBtn);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.OpenFille);
+			this.Controls.Add(this.OpenFile1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(1110, 360);
 			this.MinimizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(740, 360);
 			this.Name = "MainWindow";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Image Editor";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -137,11 +173,13 @@
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button OpenFille;
+        private System.Windows.Forms.Button OpenFile1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button CloseBtn;
 		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.Button OpenFile2;
 	}
 }
 
